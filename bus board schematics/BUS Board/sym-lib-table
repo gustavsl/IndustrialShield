@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name OpenPLC-BUS-Board-rescue)(type Legacy)(uri "${KIPRJMOD}/OpenPLC-BUS Board-rescue.lib")(options "")(descr ""))
+  (lib (name fusivel_resetavel)(type Legacy)(uri ${KIPRJMOD}/Library/fusivel_resetavel.lib)(options "")(descr ""))
+  (lib (name transorb)(type Legacy)(uri ${KIPRJMOD}/Library/transorb.lib)(options "")(descr ""))
+  (lib (name lm2576)(type Legacy)(uri ${KIPRJMOD}/Library/lm2576.lib)(options "")(descr ""))
+)

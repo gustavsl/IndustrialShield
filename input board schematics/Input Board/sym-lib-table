@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name OpenPLC-Input-Board-rescue)(type Legacy)(uri "${KIPRJMOD}/OpenPLC-Input Board-rescue.lib")(options "")(descr ""))
+  (lib (name fusivel_resetavel)(type Legacy)(uri ${KIPRJMOD}/Library/fusivel_resetavel.lib)(options "")(descr ""))
+  (lib (name transorb)(type Legacy)(uri ${KIPRJMOD}/Library/transorb.lib)(options "")(descr ""))
+)

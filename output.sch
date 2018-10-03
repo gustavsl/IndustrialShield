@@ -1,0 +1,393 @@
+EESchema Schematic File Version 4
+LIBS:IndustrialShield-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Isolator:4N25 U4
+U 1 1 5BB42517
+P 4100 2800
+F 0 "U4" H 4100 3125 50  0000 C CNN
+F 1 "4N25" H 4100 3034 50  0000 C CNN
+F 2 "Package_DIP:DIP-6_W7.62mm" H 3900 2600 50  0001 L CIN
+F 3 "https://www.vishay.com/docs/83725/4n25.pdf" H 4100 2800 50  0001 L CNN
+	1    4100 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 2700 3700 2700
+Wire Wire Line
+	3450 2700 3450 2600
+$Comp
+L power:+3V3 #PWR0115
+U 1 1 5BB4260B
+P 3450 2600
+F 0 "#PWR0115" H 3450 2450 50  0001 C CNN
+F 1 "+3V3" H 3465 2773 50  0000 C CNN
+F 2 "" H 3450 2600 50  0001 C CNN
+F 3 "" H 3450 2600 50  0001 C CNN
+	1    3450 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_PNP_BEC Q1
+U 1 1 5BB41636
+P 5150 2900
+F 0 "Q1" H 5341 2946 50  0000 L CNN
+F 1 "BC817" H 5341 2855 50  0000 L CNN
+F 2 "" H 5350 3000 50  0001 C CNN
+F 3 "~" H 5150 2900 50  0001 C CNN
+	1    5150 2900
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4400 2700
+$Comp
+L power:+24V #PWR0116
+U 1 1 5BB41712
+P 4650 2350
+F 0 "#PWR0116" H 4650 2200 50  0001 C CNN
+F 1 "+24V" H 4665 2523 50  0000 C CNN
+F 2 "" H 4650 2350 50  0001 C CNN
+F 3 "" H 4650 2350 50  0001 C CNN
+	1    4650 2350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5700 3550 2    50   Input ~ 0
+GND_24V
+$Comp
+L Device:R_Small R4
+U 1 1 5BB417A7
+P 4650 2550
+F 0 "R4" H 4709 2596 50  0000 L CNN
+F 1 "10K" H 4709 2505 50  0000 L CNN
+F 2 "" H 4650 2550 50  0001 C CNN
+F 3 "~" H 4650 2550 50  0001 C CNN
+	1    4650 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 2800 4650 2800
+Wire Wire Line
+	4650 2800 4650 2650
+Wire Wire Line
+	4650 2450 4650 2350
+$Comp
+L Device:R_Small R5
+U 1 1 5BB41815
+P 4650 3150
+F 0 "R5" H 4709 3196 50  0000 L CNN
+F 1 "4K7" H 4709 3105 50  0000 L CNN
+F 2 "" H 4650 3150 50  0001 C CNN
+F 3 "~" H 4650 3150 50  0001 C CNN
+	1    4650 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 2900 4650 2900
+Wire Wire Line
+	4650 2900 4650 3050
+Wire Wire Line
+	4650 3250 4650 3550
+Wire Wire Line
+	5250 3100 5250 3550
+Wire Wire Line
+	4650 3550 5250 3550
+Wire Wire Line
+	5250 3550 5700 3550
+Connection ~ 5250 3550
+Wire Wire Line
+	4650 2900 4950 2900
+Connection ~ 4650 2900
+$Comp
+L Device:D_Small D2
+U 1 1 5BB41CA6
+P 5250 2500
+F 0 "D2" V 5204 2568 50  0000 L CNN
+F 1 "D_Small" V 5295 2568 50  0000 L CNN
+F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5250 2500 50  0001 C CNN
+F 3 "~" V 5250 2500 50  0001 C CNN
+	1    5250 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5250 2700 5250 2650
+Wire Wire Line
+	4650 2350 5250 2350
+Wire Wire Line
+	5250 2350 5250 2400
+Connection ~ 4650 2350
+$Comp
+L relay_spco:RELAY_SPCO RLY1
+U 1 1 5BB4197F
+P 6250 2400
+F 0 "RLY1" H 6200 2897 60  0000 C CNN
+F 1 "RELAY_SPCO" H 6200 2791 60  0000 C CNN
+F 2 "" H 6250 2400 50  0001 C CNN
+F 3 "" H 6250 2400 50  0001 C CNN
+	1    6250 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 2650 6050 2650
+Connection ~ 5250 2650
+Wire Wire Line
+	5250 2650 5250 2600
+Wire Wire Line
+	5250 2350 5250 2150
+Wire Wire Line
+	5250 2150 6050 2150
+Connection ~ 5250 2350
+NoConn ~ 6500 2150
+$Comp
+L Device:Polyfuse_Small F4
+U 1 1 5BB41F4D
+P 6850 2250
+F 0 "F4" V 6645 2250 50  0000 C CNN
+F 1 "Polyfuse_Small" V 6736 2250 50  0000 C CNN
+F 2 "" H 6900 2050 50  0001 L CNN
+F 3 "~" H 6850 2250 50  0001 C CNN
+	1    6850 2250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5900 2400 5900 2250
+Wire Wire Line
+	5900 2250 6750 2250
+Wire Wire Line
+	6950 2250 7150 2250
+Text GLabel 7150 2250 2    50   Input ~ 0
+Out1A
+Wire Wire Line
+	6500 2650 6750 2650
+$Comp
+L Device:Polyfuse_Small F5
+U 1 1 5BB42BCF
+P 6850 2650
+F 0 "F5" V 6645 2650 50  0000 C CNN
+F 1 "Polyfuse_Small" V 6736 2650 50  0000 C CNN
+F 2 "" H 6900 2450 50  0001 L CNN
+F 3 "~" H 6850 2650 50  0001 C CNN
+	1    6850 2650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6950 2650 7150 2650
+Text GLabel 7150 2650 2    50   Input ~ 0
+Out1B
+Text GLabel 3450 2900 0    50   Input ~ 0
+GPIOx
+Wire Wire Line
+	3450 2900 3800 2900
+$Comp
+L Isolator:4N25 U5
+U 1 1 5BB43A5E
+P 4100 4700
+F 0 "U5" H 4100 5025 50  0000 C CNN
+F 1 "4N25" H 4100 4934 50  0000 C CNN
+F 2 "Package_DIP:DIP-6_W7.62mm" H 3900 4500 50  0001 L CIN
+F 3 "https://www.vishay.com/docs/83725/4n25.pdf" H 4100 4700 50  0001 L CNN
+	1    4100 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 4600 3700 4600
+Wire Wire Line
+	3450 4600 3450 4500
+$Comp
+L power:+3V3 #PWR0117
+U 1 1 5BB43A67
+P 3450 4500
+F 0 "#PWR0117" H 3450 4350 50  0001 C CNN
+F 1 "+3V3" H 3465 4673 50  0000 C CNN
+F 2 "" H 3450 4500 50  0001 C CNN
+F 3 "" H 3450 4500 50  0001 C CNN
+	1    3450 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_PNP_BEC Q2
+U 1 1 5BB43A6D
+P 5150 4800
+F 0 "Q2" H 5341 4846 50  0000 L CNN
+F 1 "BC817" H 5341 4755 50  0000 L CNN
+F 2 "" H 5350 4900 50  0001 C CNN
+F 3 "~" H 5150 4800 50  0001 C CNN
+	1    5150 4800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4400 4600
+$Comp
+L power:+24V #PWR0118
+U 1 1 5BB43A75
+P 4650 4250
+F 0 "#PWR0118" H 4650 4100 50  0001 C CNN
+F 1 "+24V" H 4665 4423 50  0000 C CNN
+F 2 "" H 4650 4250 50  0001 C CNN
+F 3 "" H 4650 4250 50  0001 C CNN
+	1    4650 4250
+	1    0    0    -1  
+$EndComp
+Text GLabel 5700 5450 2    50   Input ~ 0
+GND_24V
+$Comp
+L Device:R_Small R6
+U 1 1 5BB43A7C
+P 4650 4450
+F 0 "R6" H 4709 4496 50  0000 L CNN
+F 1 "10K" H 4709 4405 50  0000 L CNN
+F 2 "" H 4650 4450 50  0001 C CNN
+F 3 "~" H 4650 4450 50  0001 C CNN
+	1    4650 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 4700 4650 4700
+Wire Wire Line
+	4650 4700 4650 4550
+Wire Wire Line
+	4650 4350 4650 4250
+$Comp
+L Device:R_Small R7
+U 1 1 5BB43A86
+P 4650 5050
+F 0 "R7" H 4709 5096 50  0000 L CNN
+F 1 "4K7" H 4709 5005 50  0000 L CNN
+F 2 "" H 4650 5050 50  0001 C CNN
+F 3 "~" H 4650 5050 50  0001 C CNN
+	1    4650 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 4800 4650 4800
+Wire Wire Line
+	4650 4800 4650 4950
+Wire Wire Line
+	4650 5150 4650 5450
+Wire Wire Line
+	5250 5000 5250 5450
+Wire Wire Line
+	4650 5450 5250 5450
+Wire Wire Line
+	5250 5450 5700 5450
+Connection ~ 5250 5450
+Wire Wire Line
+	4650 4800 4950 4800
+Connection ~ 4650 4800
+$Comp
+L Device:D_Small D3
+U 1 1 5BB43A96
+P 5250 4400
+F 0 "D3" V 5204 4468 50  0000 L CNN
+F 1 "D_Small" V 5295 4468 50  0000 L CNN
+F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5250 4400 50  0001 C CNN
+F 3 "~" V 5250 4400 50  0001 C CNN
+	1    5250 4400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5250 4600 5250 4550
+Wire Wire Line
+	4650 4250 5250 4250
+Wire Wire Line
+	5250 4250 5250 4300
+Connection ~ 4650 4250
+$Comp
+L relay_spco:RELAY_SPCO RLY2
+U 1 1 5BB43AA1
+P 6250 4300
+F 0 "RLY2" H 6200 4797 60  0000 C CNN
+F 1 "RELAY_SPCO" H 6200 4691 60  0000 C CNN
+F 2 "" H 6250 4300 50  0001 C CNN
+F 3 "" H 6250 4300 50  0001 C CNN
+	1    6250 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 4550 6050 4550
+Connection ~ 5250 4550
+Wire Wire Line
+	5250 4550 5250 4500
+Wire Wire Line
+	5250 4250 5250 4050
+Wire Wire Line
+	5250 4050 6050 4050
+Connection ~ 5250 4250
+NoConn ~ 6500 4050
+$Comp
+L Device:Polyfuse_Small F6
+U 1 1 5BB43AAF
+P 6850 4150
+F 0 "F6" V 6645 4150 50  0000 C CNN
+F 1 "Polyfuse_Small" V 6736 4150 50  0000 C CNN
+F 2 "" H 6900 3950 50  0001 L CNN
+F 3 "~" H 6850 4150 50  0001 C CNN
+	1    6850 4150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5900 4300 5900 4150
+Wire Wire Line
+	5900 4150 6750 4150
+Wire Wire Line
+	6950 4150 7150 4150
+Text GLabel 7150 4150 2    50   Input ~ 0
+Out2A
+Wire Wire Line
+	6500 4550 6750 4550
+$Comp
+L Device:Polyfuse_Small F7
+U 1 1 5BB43ABB
+P 6850 4550
+F 0 "F7" V 6645 4550 50  0000 C CNN
+F 1 "Polyfuse_Small" V 6736 4550 50  0000 C CNN
+F 2 "" H 6900 4350 50  0001 L CNN
+F 3 "~" H 6850 4550 50  0001 C CNN
+	1    6850 4550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6950 4550 7150 4550
+Text GLabel 7150 4550 2    50   Input ~ 0
+Out2B
+Text GLabel 3450 4800 0    50   Input ~ 0
+GPIOy
+Wire Wire Line
+	3450 4800 3800 4800
+Wire Wire Line
+	3500 2700 3450 2700
+Wire Wire Line
+	3500 4600 3450 4600
+$Comp
+L Device:R_Small R2
+U 1 1 5BB44992
+P 3600 2700
+F 0 "R2" V 3404 2700 50  0000 C CNN
+F 1 "330R" V 3495 2700 50  0000 C CNN
+F 2 "" H 3600 2700 50  0001 C CNN
+F 3 "~" H 3600 2700 50  0001 C CNN
+	1    3600 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R3
+U 1 1 5BB449F7
+P 3600 4600
+F 0 "R3" V 3404 4600 50  0000 C CNN
+F 1 "330R" V 3495 4600 50  0000 C CNN
+F 2 "" H 3600 4600 50  0001 C CNN
+F 3 "~" H 3600 4600 50  0001 C CNN
+	1    3600 4600
+	0    1    1    0   
+$EndComp
+$EndSCHEMATC

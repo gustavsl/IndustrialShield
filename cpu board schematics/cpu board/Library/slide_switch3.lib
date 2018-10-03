@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.3  Date: 9/30/2013 8:33:41 PM
+#encoding utf-8
+#
+# Slide_switch3
+#
+DEF Slide_switch3 SW 0 0 N Y 1 F N
+F0 "SW" -199 150 50 H V C CNN
+F1 "Slide_switch3" -149 -149 50 H V C CNN
+DRAW
+C -150 0 50 0 0 0 N
+C 150 -100 50 0 0 0 N
+C 150 100 50 0 1 0 N
+C 158 0 40 0 1 0 N
+P 2 0 1 0  -102 13  87 85 N
+P 3 0 1 0  -300 -100  -200 -100  -150 -50 N
+X 1 1 500 100 300 L 60 60 1 1 P
+X 2 2 500 0 300 L 50 50 1 1 I
+X 3 3 -500 0 300 R 60 60 1 1 P
+X 4 4 500 -100 300 L 60 60 1 1 P
+X 5 5 -600 -100 300 R 60 60 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

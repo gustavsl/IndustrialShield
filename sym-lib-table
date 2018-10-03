@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name relay_spco)(type Legacy)(uri "${KIPRJMOD}/Output Board Schematics/Output Board/Library/relay_spco.lib")(options "")(descr ""))
+  (lib (name relay_dpdt)(type Legacy)(uri "${KIPRJMOD}/Output Board Schematics/Output Board/Library/relay_dpdt.lib")(options "")(descr ""))
+  (lib (name transorb)(type Legacy)(uri "${KIPRJMOD}/Input Board Schematics/Input Board/Library/transorb.lib")(options "")(descr ""))
+)

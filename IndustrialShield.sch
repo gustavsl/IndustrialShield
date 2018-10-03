@@ -1,0 +1,650 @@
+EESchema Schematic File Version 4
+LIBS:IndustrialShield-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 6
+Title "Industrial Shield for Viola Carrier Board"
+Date "2018-10-02"
+Rev "0"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 8950 1950 1700 700 
+U 5BB40725
+F0 "MAX485" 50
+F1 "485.sch" 50
+F2 "UARTB_TX" I L 8950 2150 50 
+F3 "UARTB_RX" I L 8950 2300 50 
+F4 "UARTB_RTS" I L 8950 2450 50 
+F5 "485_A" O R 10650 2200 50 
+F6 "485_B" O R 10650 2300 50 
+$EndSheet
+$Sheet
+S 8950 950  1700 800 
+U 5BB4156D
+F0 "MAX232" 50
+F1 "232.sch" 50
+F2 "UARTC_TX" I L 8950 1250 50 
+F3 "UARTC_RX" I L 8950 1400 50 
+F4 "RS232_TX" O R 10650 1250 50 
+F5 "RS232_RX" O R 10650 1350 50 
+$EndSheet
+$Sheet
+S 8950 2850 1700 900 
+U 5BB42495
+F0 "output" 50
+F1 "output.sch" 50
+F2 "GPIOx" I L 8950 3200 50 
+F3 "GPIOy" I L 8950 3350 50 
+F4 "Out1A" O R 10650 3100 50 
+F5 "Out1B" O R 10650 3200 50 
+F6 "Out2A" O R 10650 3350 50 
+F7 "Out2B" O R 10650 3450 50 
+$EndSheet
+$Comp
+L Regulator_Switching:LM2596S-3.3 U1
+U 1 1 5BB42586
+P 2850 6750
+F 0 "U1" H 2850 7117 50  0000 C CNN
+F 1 "LM2596S-3.3" H 2850 7026 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TO-263-5_TabPin3" H 2900 6500 50  0001 L CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2596.pdf" H 2850 6750 50  0001 C CNN
+	1    2850 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2350 6650 2050 6650
+$Comp
+L power:+24V #PWR0101
+U 1 1 5BB42613
+P 1200 6650
+F 0 "#PWR0101" H 1200 6500 50  0001 C CNN
+F 1 "+24V" H 1215 6823 50  0000 C CNN
+F 2 "" H 1200 6650 50  0001 C CNN
+F 3 "" H 1200 6650 50  0001 C CNN
+	1    1200 6650
+	1    0    0    -1  
+$EndComp
+Text GLabel 1200 7200 0    50   Input ~ 0
+GND_24V
+Wire Wire Line
+	2350 7200 2350 6850
+Wire Wire Line
+	2850 7050 2850 7200
+Wire Wire Line
+	2850 7200 2350 7200
+Connection ~ 2350 7200
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 5BB42B20
+P 1150 5550
+F 0 "J1" H 1070 5225 50  0000 C CNN
+F 1 "Screw_Terminal_01x02" H 1070 5316 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 1150 5550 50  0001 C CNN
+F 3 "~" H 1150 5550 50  0001 C CNN
+	1    1150 5550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Polyfuse_Small F1
+U 1 1 5BB42C42
+P 2300 5250
+F 0 "F1" V 2095 5250 50  0000 C CNN
+F 1 "Polyfuse_Small" V 2186 5250 50  0000 C CNN
+F 2 "" H 2350 5050 50  0001 L CNN
+F 3 "~" H 2300 5250 50  0001 C CNN
+	1    2300 5250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2700 5250 2400 5250
+Wire Wire Line
+	2200 5250 1850 5250
+Wire Wire Line
+	1850 5250 1850 5450
+Wire Wire Line
+	1850 5450 1350 5450
+Wire Wire Line
+	1350 5550 1850 5550
+$Comp
+L transorb:TRANSORB T1
+U 1 1 5BB42A1A
+P 2700 5500
+F 0 "T1" V 2763 5372 40  0000 R CNN
+F 1 "TRANSORB" V 2687 5372 40  0000 R CNN
+F 2 "" H 2700 5500 50  0001 C CNN
+F 3 "" H 2700 5500 50  0001 C CNN
+	1    2700 5500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1850 5550 1850 5750
+Wire Wire Line
+	1850 5750 2700 5750
+Wire Wire Line
+	2700 5750 2700 5700
+Wire Wire Line
+	2700 5250 3200 5250
+Connection ~ 2700 5250
+Wire Wire Line
+	2700 5750 3200 5750
+Connection ~ 2700 5750
+$Comp
+L power:+24V #PWR0102
+U 1 1 5BB43342
+P 3200 5250
+F 0 "#PWR0102" H 3200 5100 50  0001 C CNN
+F 1 "+24V" H 3215 5423 50  0000 C CNN
+F 2 "" H 3200 5250 50  0001 C CNN
+F 3 "" H 3200 5250 50  0001 C CNN
+	1    3200 5250
+	1    0    0    -1  
+$EndComp
+Text GLabel 3200 5750 2    50   Input ~ 0
+GND_24V
+$Comp
+L Device:C_Small C2
+U 1 1 5BB43623
+P 2050 6900
+F 0 "C2" H 1958 6854 50  0000 R CNN
+F 1 "100u" H 1958 6945 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 2050 6900 50  0001 C CNN
+F 3 "~" H 2050 6900 50  0001 C CNN
+	1    2050 6900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C1
+U 1 1 5BB436E1
+P 1750 6900
+F 0 "C1" H 1658 6854 50  0000 R CNN
+F 1 "100n" H 1658 6945 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1750 6900 50  0001 C CNN
+F 3 "~" H 1750 6900 50  0001 C CNN
+	1    1750 6900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2050 6800 2050 6650
+Wire Wire Line
+	2050 7000 2050 7200
+Connection ~ 2050 7200
+Wire Wire Line
+	2050 7200 2350 7200
+Wire Wire Line
+	1750 7000 1750 7200
+Wire Wire Line
+	1750 7200 2050 7200
+Wire Wire Line
+	1750 6800 1750 6650
+Wire Wire Line
+	1750 6650 2050 6650
+Connection ~ 2050 6650
+Wire Wire Line
+	1750 6650 1200 6650
+Connection ~ 1750 6650
+$Comp
+L Device:R_Small R1
+U 1 1 5BB4407C
+P 1500 7200
+F 0 "R1" V 1304 7200 50  0000 C CNN
+F 1 "0R" V 1395 7200 50  0000 C CNN
+F 2 "" H 1500 7200 50  0001 C CNN
+F 3 "~" H 1500 7200 50  0001 C CNN
+	1    1500 7200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1200 7200 1400 7200
+Wire Wire Line
+	1600 7200 1750 7200
+Connection ~ 1750 7200
+$Comp
+L Device:L_Small L1
+U 1 1 5BB4470E
+P 3850 6850
+F 0 "L1" V 4035 6850 50  0000 C CNN
+F 1 "L_Small" V 3944 6850 50  0000 C CNN
+F 2 "" H 3850 6850 50  0001 C CNN
+F 3 "~" H 3850 6850 50  0001 C CNN
+	1    3850 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D_Schottky_Small D1
+U 1 1 5BB44A74
+P 3550 7050
+F 0 "D1" V 3504 7118 50  0000 L CNN
+F 1 "D_Schottky_Small" V 3595 7118 50  0000 L CNN
+F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3550 7050 50  0001 C CNN
+F 3 "~" V 3550 7050 50  0001 C CNN
+	1    3550 7050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3350 6850 3550 6850
+Wire Wire Line
+	3550 6850 3550 6950
+Wire Wire Line
+	3550 6850 3750 6850
+Connection ~ 3550 6850
+Wire Wire Line
+	2850 7200 3550 7200
+Wire Wire Line
+	3550 7200 3550 7150
+Connection ~ 2850 7200
+$Comp
+L Device:C_Small C3
+U 1 1 5BB45538
+P 4100 7000
+F 0 "C3" H 4008 6954 50  0000 R CNN
+F 1 "1000u" H 4008 7045 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4100 7000 50  0001 C CNN
+F 3 "~" H 4100 7000 50  0001 C CNN
+	1    4100 7000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3950 6850 4100 6850
+Wire Wire Line
+	4100 6850 4100 6900
+Wire Wire Line
+	3550 7200 4100 7200
+Wire Wire Line
+	4100 7200 4100 7100
+Connection ~ 3550 7200
+$Comp
+L Device:C_Small C4
+U 1 1 5BB45E04
+P 4550 7000
+F 0 "C4" H 4458 6954 50  0000 R CNN
+F 1 "100n" H 4458 7045 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4550 7000 50  0001 C CNN
+F 3 "~" H 4550 7000 50  0001 C CNN
+	1    4550 7000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4100 6850 4550 6850
+Wire Wire Line
+	4550 6850 4550 6900
+Connection ~ 4100 6850
+Wire Wire Line
+	4100 7200 4550 7200
+Wire Wire Line
+	4550 7200 4550 7100
+Connection ~ 4100 7200
+Wire Wire Line
+	4550 6850 4550 6450
+Connection ~ 4550 6850
+$Comp
+L power:+3V3 #PWR0103
+U 1 1 5BB46DD4
+P 4550 6450
+F 0 "#PWR0103" H 4550 6300 50  0001 C CNN
+F 1 "+3V3" H 4565 6623 50  0000 C CNN
+F 2 "" H 4550 6450 50  0001 C CNN
+F 3 "" H 4550 6450 50  0001 C CNN
+	1    4550 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5BB46F04
+P 2850 7250
+F 0 "#PWR0104" H 2850 7000 50  0001 C CNN
+F 1 "GND" H 2855 7077 50  0000 C CNN
+F 2 "" H 2850 7250 50  0001 C CNN
+F 3 "" H 2850 7250 50  0001 C CNN
+	1    2850 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 7250 2850 7200
+Wire Notes Line
+	650  6050 3750 6050
+Wire Notes Line
+	3750 6050 3750 4950
+Wire Notes Line
+	3750 4950 650  4950
+Wire Notes Line
+	650  4950 650  6050
+Text Notes 2850 6000 0    50   ~ 0
+Overvoltage protection\n
+Wire Notes Line
+	650  7600 4950 7600
+Wire Notes Line
+	4950 7600 4950 6150
+Wire Notes Line
+	4950 6150 650  6150
+Wire Notes Line
+	650  6150 650  7600
+Text Notes 4150 7550 0    50   ~ 0
+24V to 3.3V supply
+$Comp
+L Connector:Screw_Terminal_01x02 J7
+U 1 1 5BB4D376
+P 10950 4250
+F 0 "J7" H 11030 4242 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 4151 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 4250 50  0001 C CNN
+F 3 "~" H 10950 4250 50  0001 C CNN
+	1    10950 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J8
+U 1 1 5BB4D732
+P 10950 4500
+F 0 "J8" H 11030 4492 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 4401 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 4500 50  0001 C CNN
+F 3 "~" H 10950 4500 50  0001 C CNN
+	1    10950 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J5
+U 1 1 5BB501C1
+P 10950 3100
+F 0 "J5" H 11030 3092 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 3001 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 3100 50  0001 C CNN
+F 3 "~" H 10950 3100 50  0001 C CNN
+	1    10950 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J6
+U 1 1 5BB501F3
+P 10950 3350
+F 0 "J6" H 11030 3342 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 3251 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 3350 50  0001 C CNN
+F 3 "~" H 10950 3350 50  0001 C CNN
+	1    10950 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 3100 10750 3100
+Wire Wire Line
+	10650 3200 10750 3200
+Wire Wire Line
+	10650 3350 10750 3350
+Wire Wire Line
+	10650 3450 10750 3450
+$Comp
+L Connector:Screw_Terminal_01x02 J4
+U 1 1 5BB5E596
+P 10950 2200
+F 0 "J4" H 11030 2192 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 2101 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 2200 50  0001 C CNN
+F 3 "~" H 10950 2200 50  0001 C CNN
+	1    10950 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 2300 10750 2300
+Wire Wire Line
+	10650 2200 10750 2200
+$Comp
+L Connector:Screw_Terminal_01x02 J3
+U 1 1 5BB5FDD5
+P 10950 1250
+F 0 "J3" H 11030 1242 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 1151 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 1250 50  0001 C CNN
+F 3 "~" H 10950 1250 50  0001 C CNN
+	1    10950 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10650 1350 10750 1350
+Wire Wire Line
+	10650 1250 10750 1250
+$Comp
+L Connector_Generic:Conn_02x25_Odd_Even J2
+U 1 1 5BB70C01
+P 2650 2350
+F 0 "J2" H 2700 3767 50  0000 C CNN
+F 1 "Viola Connector" H 2700 3676 50  0000 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_2x25_P1.00mm_Vertical_SMD" H 2650 2350 50  0001 C CNN
+F 3 "~" H 2650 2350 50  0001 C CNN
+	1    2650 2350
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2950 1150
+NoConn ~ 2450 1250
+NoConn ~ 2450 1350
+NoConn ~ 2950 1350
+NoConn ~ 2450 1950
+NoConn ~ 2950 1950
+NoConn ~ 2950 2050
+NoConn ~ 2450 2150
+NoConn ~ 2950 2150
+NoConn ~ 2450 2250
+NoConn ~ 2450 2350
+NoConn ~ 2950 2350
+NoConn ~ 2450 2450
+NoConn ~ 2950 2450
+NoConn ~ 2450 2550
+NoConn ~ 2950 2550
+NoConn ~ 2450 2650
+NoConn ~ 2950 2650
+Text GLabel 2350 2950 0    50   Input ~ 0
+UARTB_RX
+Wire Wire Line
+	2450 2950 2350 2950
+Text GLabel 3050 2850 2    50   Input ~ 0
+UARTB_TX
+Wire Wire Line
+	2950 2850 3050 2850
+Text GLabel 3050 2950 2    50   Input ~ 0
+UARTB_RTS
+Wire Wire Line
+	2950 2950 3050 2950
+Text GLabel 3050 2750 2    50   Input ~ 0
+UARTC_TX
+Wire Wire Line
+	2950 2750 3050 2750
+Text GLabel 2350 2850 0    50   Input ~ 0
+UARTC_RX
+Wire Wire Line
+	2350 2850 2450 2850
+Text GLabel 8850 1400 0    50   Input ~ 0
+UARTC_RX
+Wire Wire Line
+	8850 1400 8950 1400
+Text GLabel 8850 1250 0    50   Input ~ 0
+UARTC_TX
+Wire Wire Line
+	8850 1250 8950 1250
+Text GLabel 8850 2300 0    50   Input ~ 0
+UARTB_TX
+Wire Wire Line
+	8850 2300 8950 2300
+Text GLabel 8850 2150 0    50   Input ~ 0
+UARTB_TX
+Wire Wire Line
+	8850 2150 8950 2150
+Text GLabel 8850 2450 0    50   Input ~ 0
+UARTB_RTS
+Wire Wire Line
+	8850 2450 8950 2450
+NoConn ~ 2450 3050
+NoConn ~ 2450 3150
+NoConn ~ 2950 3150
+NoConn ~ 2450 3250
+NoConn ~ 2950 3250
+NoConn ~ 2950 3350
+$Comp
+L power:GND #PWR0105
+U 1 1 5BB8CB0C
+P 1950 3350
+F 0 "#PWR0105" H 1950 3100 50  0001 C CNN
+F 1 "GND" H 1955 3177 50  0000 C CNN
+F 2 "" H 1950 3350 50  0001 C CNN
+F 3 "" H 1950 3350 50  0001 C CNN
+	1    1950 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 3350 2450 3350
+$Comp
+L power:GND #PWR0106
+U 1 1 5BB8DCDC
+P 3300 3050
+F 0 "#PWR0106" H 3300 2800 50  0001 C CNN
+F 1 "GND" H 3305 2877 50  0000 C CNN
+F 2 "" H 3300 3050 50  0001 C CNN
+F 3 "" H 3300 3050 50  0001 C CNN
+	1    3300 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 3050 3300 3050
+$Comp
+L power:GND #PWR0107
+U 1 1 5BB90291
+P 1750 2750
+F 0 "#PWR0107" H 1750 2500 50  0001 C CNN
+F 1 "GND" H 1755 2577 50  0000 C CNN
+F 2 "" H 1750 2750 50  0001 C CNN
+F 3 "" H 1750 2750 50  0001 C CNN
+	1    1750 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 2750 2450 2750
+$Comp
+L power:GND #PWR0108
+U 1 1 5BB91631
+P 3100 2250
+F 0 "#PWR0108" H 3100 2000 50  0001 C CNN
+F 1 "GND" H 3105 2077 50  0000 C CNN
+F 2 "" H 3100 2250 50  0001 C CNN
+F 3 "" H 3100 2250 50  0001 C CNN
+	1    3100 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 2250 3100 2250
+$Comp
+L power:GND #PWR0109
+U 1 1 5BB92AB5
+P 2300 2050
+F 0 "#PWR0109" H 2300 1800 50  0001 C CNN
+F 1 "GND" H 2305 1877 50  0000 C CNN
+F 2 "" H 2300 2050 50  0001 C CNN
+F 3 "" H 2300 2050 50  0001 C CNN
+	1    2300 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 2050 2450 2050
+$Comp
+L power:GND #PWR0110
+U 1 1 5BB96BD5
+P 1950 1450
+F 0 "#PWR0110" H 1950 1200 50  0001 C CNN
+F 1 "GND" H 1955 1277 50  0000 C CNN
+F 2 "" H 1950 1450 50  0001 C CNN
+F 3 "" H 1950 1450 50  0001 C CNN
+	1    1950 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 1450 2450 1450
+Wire Wire Line
+	10650 4250 10750 4250
+$Sheet
+S 8950 5150 1700 950 
+U 5BBA5743
+F0 "analog" 50
+F1 "analog.sch" 50
+F2 "0-10_4-20_1_P" I R 10650 5400 50 
+F3 "0-10_4-20_1_N" I R 10650 5500 50 
+F4 "0-10_4-20_2_P" I R 10650 5650 50 
+F5 "0-10_4-20_2_N" I R 10650 5750 50 
+F6 "AIN0" O L 8950 5500 50 
+F7 "AIN1" O L 8950 5650 50 
+$EndSheet
+$Comp
+L Connector:Screw_Terminal_01x02 J9
+U 1 1 5BB4937C
+P 10950 5400
+F 0 "J9" H 11030 5392 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 5301 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 5400 50  0001 C CNN
+F 3 "~" H 10950 5400 50  0001 C CNN
+	1    10950 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J10
+U 1 1 5BB493C1
+P 10950 5650
+F 0 "J10" H 11030 5642 50  0000 L CNN
+F 1 "Screw_Terminal_01x02" H 11030 5551 50  0001 L CNN
+F 2 "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" H 10950 5650 50  0001 C CNN
+F 3 "~" H 10950 5650 50  0001 C CNN
+	1    10950 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10750 5650 10650 5650
+Wire Wire Line
+	10650 5750 10750 5750
+Wire Wire Line
+	10750 5500 10650 5500
+Wire Wire Line
+	10650 5400 10750 5400
+Wire Wire Line
+	10650 4600 10750 4600
+Wire Wire Line
+	10650 4500 10750 4500
+Wire Wire Line
+	10650 4350 10750 4350
+$Sheet
+S 8950 4000 1700 950 
+U 5BB45CA4
+F0 "input" 50
+F1 "input.sch" 50
+F2 "GPIOz" O L 8950 4350 50 
+F3 "GPIOw" O L 8950 4500 50 
+F4 "In1_P" I R 10650 4250 50 
+F5 "In1_N" I R 10650 4350 50 
+F6 "In2_P" I R 10650 4500 50 
+F7 "In2_N" I R 10650 4600 50 
+$EndSheet
+Text GLabel 2400 3450 0    50   Input ~ 0
+AIN0
+Wire Wire Line
+	2450 3450 2400 3450
+Text GLabel 3000 3450 2    50   Input ~ 0
+AIN1
+Wire Wire Line
+	2950 3450 3000 3450
+NoConn ~ 2950 3550
+NoConn ~ 2450 3550
+Text GLabel 8850 5500 0    50   Input ~ 0
+AIN0
+Wire Wire Line
+	8950 5500 8850 5500
+Text GLabel 8850 5650 0    50   Input ~ 0
+AIN1
+Wire Wire Line
+	8850 5650 8950 5650
+NoConn ~ 2950 1650
+NoConn ~ 2950 1750
+NoConn ~ 2950 1850
+NoConn ~ 2450 1850
+NoConn ~ 2450 1750
+$EndSCHEMATC
